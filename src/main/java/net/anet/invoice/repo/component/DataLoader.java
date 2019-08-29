@@ -34,7 +34,7 @@ public class DataLoader implements ApplicationRunner {
         int numFiles=0;
         log.debug("Starting DataLoader::process");
 //        if(true)
-//        return;
+//            return;
 //        Collection<File> listOfFiles = listFiles(new File("/home/luis/lavoro/fatturaPoli/invoice/src/test/resources/files"), new String[]{"xml"}, true);
         Collection<File> listOfFiles = listFiles(new File("/home/luis/lavoro/fatturaPoli/invoices/files/"), new String[]{"xml"}, true);
         for(File file: listOfFiles) {

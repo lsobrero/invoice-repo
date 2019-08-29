@@ -1,0 +1,38 @@
+docker-compose -f src/main/docker/jhipster-registry.yml up -d
+docker-compose -f src/main/docker/mysql.yml up -d
+
+docker-compose -f src/main/docker/jhipster-registry.yml up -d
+docker-compose -f src/main/docker/mysql.yml up -d
+docker-compose -f src/main/docker/mysql.yml -d
+docker-compose -f src/main/docker/mysql.yml up -d
+docker-compose -f src/main/docker/mysql.yml up -d --remove-orphans
+
+
+
+test data
+
+http://localhost:8081/api/fa-headers/
+http://localhost:8081/api/fa-bodies/
+
+http://localhost:8081/h2-console/
+
+delete from ALLEGATO;
+delete from ALTRI_DATI_GESTIONALI;
+delete from CASSA_PREVIDENZIALE;
+delete from CAUSALE;
+delete from CODICE_ARTICOLO;
+delete from CONTRATTO;
+delete from CONVENZIONE;
+delete from DETTAGLIO_PAGAMENTO;
+delete from DATI_PAGAMENTO;
+delete from DATI_RIEPILOGO;
+delete from DDT;
+delete from DETTAGLIO_LINEA;
+delete from FATTURA_COLLEGATA;
+delete from FA_BODY;
+delete from FA_HEADER;
+delete from NUMERO_LINEA;
+delete from ORDINE_ACQUISTO;
+delete from RICEZIONE;
+delete from SAL;
+delete from SCONTO_MAGGIORAZIONE;
