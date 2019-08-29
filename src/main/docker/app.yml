@@ -1,0 +1,14 @@
+version: '2'
+services:
+  invoice-app:
+    image: invoice
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,swagger
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://invoice-postgresql:5432/invoice
+      - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+  invoice-postgresql:
+    extends:
+      file: postgresql.yml
+      service: invoice-postgresql

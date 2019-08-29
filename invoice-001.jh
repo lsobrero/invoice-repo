@@ -1,0 +1,921 @@
+application {
+  config {
+    baseName invoice,
+    applicationType microservice,
+    packageName net.anet.invoice.repo,
+    serviceDiscoveryType no,
+    authenticationType jwt,
+    prodDatabaseType postgresql,
+    buildTool maven,
+    serverPort 8081,
+    skipUserManagement true
+  }
+  entities *   
+}
+
+
+entity FAHeader { 
+//1FatturaElettronicaHeader
+//1_1DatiTrasmissione
+//1_1_1IdTrasmittente
+	TrasmittenteIdPaese String maxlength(2)
+	TrasmittenteIdCodice String maxlength(28)
+//1_1_2ProgressivoInvio
+	ProgressivoInvio String maxlength(10)
+//1_1_3FormatoTrasmissione
+	FormatoTrasmissione String maxlength(5)
+//1_1_4CodiceDestinatario
+	CodiceDestinatario String maxlength(7)
+//1_1_5ContattiTrasmittente
+	Telefono String maxlength(12)
+	Email String  maxlength(250)
+//1_1_6PECDestinatario
+	PECDestinatario String  maxlength(250)
+	
+//1_2CedentePrestatore
+//1_2_1DatiAnagrafici
+//1_2_1_1IdFiscaleIVA
+//	CPDAIdFiscaleIVA
+//1_2_1_1_1IdPaese
+	CPDAIdPaese String maxlength(2)
+//1_2_1_1_2IdCodice
+	CPDAIdCodice String maxlength(28)
+//1_2_1_2CodiceFiscale
+	CPDACodiceFiscale String maxlength(16)
+//1_2_1_3Anagrafica
+//1_2_1_3_1Denominazione
+	CPADenominazione String maxlength(250)
+//1_2_1_3_2Nome
+	CPANome String maxlength(100)
+//1_2_1_3_3Cognome
+	CPACognome String maxlength(100)
+//1_2_1_3_4Titolo
+	CPATitolo String maxlength(10)
+//1_2_1_3_5CodEORI
+	CPACodEORI String maxlength(17)
+//1_2_1_4AlboProfessionale
+	CPAAlboProfessionale String maxlength(60)
+//1_2_1_5ProvinciaAlbo
+	CPAProvinciaAlbo String maxlength(2)
+//1_2_1_6NumeroIscrizioneAlbo
+	CPANumeroIscrizioneAlbo String maxlength(60)
+//1_2_1_7DataIscrizioneAlbo
+	CPADataIscrizioneAlbo String maxlength(10)
+//1_2_1_8RegimeFiscale
+	CPARegimeFiscale String maxlength(4)
+//1_2_2Sede
+//1_2_2_1Indirizzo
+	CPSIndirizzo String maxlength(60)
+//1_2_2_2NumeroCivico
+	CPSNumeroCivico String maxlength(8)
+//1_2_2_3CAP
+	CPSCAP String maxlength(5)
+//1_2_2_4Comune
+	CPSComune String maxlength(60)
+//1_2_2_5Provincia
+	CPSProvincia String maxlength(2)
+//1_2_2_6Nazione
+	CPSNazione String maxlength(2)
+//1_2_3StabileOrganizzazione
+//1_2_3_1Indirizzo
+	SOIndirizzo String maxlength(60)
+//1_2_3_2NumeroCivico
+	SONumeroCivico String maxlength(8)
+//1_2_3_3CAP
+	SOCAP String maxlength(5)
+//1_2_3_4Comune
+	SOComune String maxlength(60)
+//1_2_3_5Provincia
+	SOProvincia String maxlength(2)
+//1_2_3_6Nazione
+	SONazione String maxlength(2)
+//1_2_4IscrizioneREA
+//1_2_4_1Ufficio
+	SOIREAUfficio String maxlength(2)
+//1_2_4_2NumeroREA
+	SOIREANumeroREA String maxlength(20)
+//1_2_4_3CapitaleSociale
+	SOIREACapitaleSociale String maxlength(15)
+//1_2_4_4SocioUnico
+	SOIREASocioUnico String maxlength(2)
+//1_2_4_5StatoLiquidazione
+	SOIREAStatoLiquidazione String maxlength(2)
+//1_2_5Contatti
+//1_2_5_1Telefono
+	SOCTelefono String maxlength(12)
+//1_2_5_2Fax
+	SOCFax String maxlength(12)
+//1_2_5_3Email
+	SOCEmail String maxlength(250)
+//1_2_6RiferimentoAmministrazione
+	SOCRiferimentoAmministrazione String maxlength(20)
+//1_3RappresentanteFiscale
+//1_3_1DatiAnagrafici
+//1_3_1_1IdFiscaleIVA
+//1_3_1_1_1IdPaese
+	RFDAIdPaese String maxlength(2)
+//1_3_1_1_2IdCodice
+	RFDAIdCodice String maxlength(20)
+//1_3_1_2CodiceFiscale
+	RFDACodiceFiscale String maxlength(16)
+//1_3_1_3Anagrafica
+//1_3_1_3_1Denominazione
+	RFADenominazione String maxlength(80)
+//1_3_1_3_2Nome
+	RFANome String maxlength(60)
+//1_3_1_3_3Cognome
+	RFACognome String maxlength(60)
+//1_3_1_3_4Titolo
+	RFATitolo String maxlength(10)
+//1_3_1_3_5CodEORI
+	RFACodEORI String maxlength(17)
+//1_4CessionarioCommittente
+//1_4_1DatiAnagrafici
+//1_4_1_1IdFiscaleIVA
+//1_4_1_1_1IdPaese
+	CCDAIdPaese String maxlength(2)
+//1_4_1_1_2IdCodice
+	CCDAIdCodice String maxlength(28)
+//1_4_1_2CodiceFiscale
+	CCDACodiceFiscale String maxlength(16)
+//1_4_1_3Anagrafica
+//1_4_1_3_1Denominazione
+	CCADenominazione String maxlength(80)
+//1_4_1_3_2Nome
+	CCANome String maxlength(60)
+//1_4_1_3_3Cognome
+	CCACognome String maxlength(60)
+//1_4_1_3_4Titolo
+	CCATitolo String maxlength(10)
+//1_4_1_3_5CodEORI
+	CCACodEORI String maxlength(17)
+//1_4_2Sede
+//1_4_2_1Indirizzo
+	CCSIndirizzo String maxlength(60)
+//1_4_2_2NumeroCivico
+	CCSNumeroCivico String maxlength(8)
+//1_4_2_3CAP
+	CCSCAP String maxlength(5)
+//1_4_2_4Comune
+	CCSComune String maxlength(60)
+//1_4_2_5Provincia
+	CCSProvincia String maxlength(2)
+//1_4_2_6Nazione
+	CCSNazione String maxlength(2)
+//1_4_3StabileOrganizzazione
+//1_4_3_1Indirizzo
+	CCSOIndirizzo String maxlength(60)
+//1_4_3_2NumeroCivico
+	CCSONumeroCivico String maxlength(8)
+//1_4_3_3CAP
+	CCSOCAP String maxlength(5)
+//1_4_3_4Comune
+	CCSOComune String maxlength(60)
+//1_4_3_5Provincia
+	CCSOProvincia String maxlength(2)
+//1_4_3_6Nazione
+	CCSONazione String maxlength(2)
+//1_4_4RappresentanteFiscale
+//1_4_4_1IdFiscaleIVA
+//1_4_4_1_1IdPaese
+	CCRFIdPaese String maxlength(2)
+//1_4_4_1_2IdCodice
+	CCRFIdCodice String maxlength(28)
+//1_4_4_2Denominazione
+	CCRFDenominazione String maxlength(80)
+//1_4_4_3Nome
+	CCRFNome String maxlength(60)
+//1_4_4_4Cognome
+	CCRFCognome String maxlength(60)
+//1_5TerzoIntermediarioOSoggettoEmittente
+//1_5_1DatiAnagrafici
+//1_5_1_1IdFiscaleIVA
+//1_5_1_1_1IdPaese
+	TIDAIdPaese String maxlength(2)
+//1_5_1_1_2IdCodice
+	TIDAIdCodice String maxlength(28)
+//1_5_1_2CodiceFiscale
+	TIDACodiceFiscale String maxlength(16)
+//1_5_1_3Anagrafica
+//1_5_1_3_1Denominazione
+	TIADenominazione String maxlength(80)
+//1_5_1_3_2Nome
+	TIANome String maxlength(60)
+//1_5_1_3_3Cognome
+	TIACognome String maxlength(60)
+//1_5_1_3_4Titolo
+	TIATitolo String maxlength(10)
+//1_5_1_3_5CodEORI
+	TIACodEORI String maxlength(17)
+//1_6SoggettoEmittente
+	SoggettoEmittente String maxlength(2)
+}
+
+entity FABody {
+//2FatturaElettronicaBody
+//2_1DatiGenerali
+//2_1_1DatiGeneraliDocumento
+//2_1_1_1TipoDocumento
+	TipoDocumento String maxlength(4)
+//2_1_1_2Divisa
+	Divisa String maxlength(3)
+//2_1_1_3Data
+	Data String maxlength(10)
+//2_1_1_4Numero
+	Numero String maxlength(20)
+//2_1_1_5DatiRitenuta
+//2_1_1_5_1TipoRitenuta
+	TipoRitenuta String maxlength(4)
+//2_1_1_5_2ImportoRitenuta
+	ImportoRitenuta String maxlength(15)
+//2_1_1_5_3AliquotaRitenuta
+	AliquotaRitenuta String maxlength(6)
+//2_1_1_5_4CausalePagamento
+	CausalePagamento String maxlength(2)
+//2_1_1_6DatiBollo
+//2_1_1_6_1BolloVirtuale
+	BolloVirtuale String maxlength(2)
+//2_1_1_6_2ImportoBollo
+	ImportoBollo String maxlength(15)
+	
+	
+////2_1_1_7DatiCassaPrevidenziale
+////2_1_1_7_1TipoCassa
+//	TipoCassa String
+////2_1_1_7_2AlCassa
+//	AlCassa String
+////2_1_1_7_3ImportoContributoCassa
+//	ImportoContributoCassa String
+////2_1_1_7_4ImponibileCassa
+//	ImponibileCassa String
+////2_1_1_7_5AliquotaIVA
+//	AliquotaIVA String
+////2_1_1_7_6Ritenuta
+//	Ritenuta String
+////2_1_1_7_7Natura
+//	Natura String
+////2_1_1_7_8RiferimentoAmministrazione
+//	RiferimentoAmministrazione String
+
+////2_1_1_8ScontoMaggiorazione
+////2_1_1_8_1Tipo
+//	Tipo String
+////2_1_1_8_2Percentuale
+//	Percentuale String
+////2_1_1_8_3Importo
+//	Importo String
+
+//2_1_1_9ImportoTotaleDocumento
+	ImportoTotaleDocumento String maxlength(15)
+//2_1_1_10Arrotondamento
+	Arrotondamento String maxlength(15)
+	
+////2_1_1_11Causale
+//	Causale String
+
+
+//2_1_1_12Art73
+	Art73 String maxlength(2)
+	
+////2_1_2DatiOrdineAcquisto
+////2_1_2_1RiferimentoNumeroLinea
+//	RiferimentoNumeroLinea String
+////2_1_2_2IdDocumento
+//	IdDocumento String
+////2_1_2_3Data
+//	DOAData String
+////2_1_2_4NumItem
+//	NumItem String
+////2_1_2_5CodiceCommessaConvenzione
+//	CodiceCommessaConvenzione String
+////2_1_2_6CodiceCUP
+//	CodiceCUP String
+////2_1_2_7CodiceCIG
+//	CodiceCIG String
+
+
+////2_1_3
+//	DatiContratto String
+//	
+//	
+////2_1_4DatiConvenzione
+//	DatiConvenzione String
+//	
+//	
+////2_1_5DatiRicezione
+//	DatiRicezione String
+//	
+//	
+////2_1_6DatiFattureCollegate
+//	DatiFattureCollegate String
+//	
+//	
+////2_1_7DatiSAL
+////2_1_7_1RiferimentoFase
+//	RiferimentoFase String
+	
+////2_1_8DatiDDT
+////2_1_8_1NumeroDDT
+//	NumeroDDT String
+////2_1_8_2DataDDT
+//	DataDDT String
+////2_1_8_3RiferimentoNumeroLinea
+//	DDTRiferimentoNumeroLinea String
+	
+	
+//2_1_9DatiTrasporto
+//2_1_9_1DatiAnagraficiVettore
+//2_1_9_1_1IdFiscaleIVA
+//2_1_9_1_1_1IdPaese
+	IdPaese String maxlength(2)
+//2_1_9_1_1_2IdCodice
+	IdCodice String maxlength(28)
+//2_1_9_1_2CodiceFiscale
+	CodiceFiscale String maxlength(16)
+//2_1_9_1_3Anagrafica
+//2_1_9_1_3_1Denominazione
+	Denominazione String maxlength(80)
+//2_1_9_1_3_2Nome
+	Nome String maxlength(60)
+//2_1_9_1_3_3Cognome
+	Cognome String maxlength(60)
+//2_1_9_1_3_4Titolo
+	Titolo String maxlength(10)
+//2_1_9_1_3_5CodEORI
+	CodEORI String maxlength(17)
+//2_1_9_1_4NumeroLicenzaGuida
+	NumeroLicenzaGuida String maxlength(20)
+//2_1_9_2MezzoTrasporto
+	MezzoTrasporto String maxlength(80)
+//2_1_9_3CausaleTrasporto
+	CausaleTrasporto String maxlength(100)
+//2_1_9_4NumeroColli
+	NumeroColli String maxlength(4)
+//2_1_9_5Descrizione
+	Descrizione String maxlength(100)
+//2_1_9_6UnitaMisuraPeso
+	UnitaMisuraPeso String maxlength(10)
+//2_1_9_7PesoLordo
+	PesoLordo String maxlength(7)
+//2_1_9_8PesoNetto
+	PesoNetto String maxlength(7)
+//2_1_9_9DataOraRitiro
+	DataOraRitiro String maxlength(19)
+//2_1_9_10DataInizioTrasporto
+	DataInizioTrasporto String maxlength(10)
+//2_1_9_11TipoResa
+	TipoResa String maxlength(3)
+//2_1_9_12IndirizzoResa
+//2_1_9_12_1Indirizzo
+	Indirizzo String maxlength(60)
+//2_1_9_12_2NumeroCivico
+	NumeroCivico String maxlength(8)
+//2_1_9_12_3CAP
+	CAP String maxlength(5)
+//2_1_9_12_4Comune
+	Comune String maxlength(60)
+//2_1_9_12_5Provincia
+	Provincia String maxlength(2)
+//2_1_9_12_6Nazione
+	Nazione String maxlength(2)
+//2_1_9_13DataOraConsegna
+	DataOraConsegna String maxlength(19)
+//2_1_10FatturaPrincipale
+//2_1_10_1NumeroFatturaPrincipale
+	NumeroFatturaPrincipale String maxlength(20)
+//2_1_10_2DataFatturaPrincipale
+	DataFatturaPrincipale String maxlength(10)
+/**
+ * possibile tabella esterna
+ */	
+////2_2DatiBeniServizi
+////2_2_1DettaglioLinee
+////2_2_1_1NumeroLinea
+//	NumeroLinea String
+////2_2_1_2TipoCessionePrestazione
+//	TipoCessionePrestazione String
+////2_2_1_3CodiceArticolo
+////2_2_1_3_1CodiceTipo
+//	CodiceTipo String
+////2_2_1_3_2CodiceValore
+//	CodiceValore String
+////2_2_1_4Descrizione
+//	DLDescrizione String
+////2_2_1_5Quantita
+//	Quantita String
+////2_2_1_6UnitaMisura
+//	UnitaMisura String
+////2_2_1_7DataInizioPeriodo
+//	DataInizioPeriodo String
+////2_2_1_8DataFinePeriodo
+//	DataFinePeriodo String
+////2_2_1_9PrezzoUnitario
+//	PrezzoUnitario String
+////2_2_1_10ScontoMaggiorazione
+////2_2_1_10_1Tipo
+//	SMTipo String
+////2_2_1_10_2Percentuale
+//	SMPercentuale String
+////2_2_1_10_3Importo
+//	SMImporto String
+////2_2_1_11PrezzoTotale
+//	SMPrezzoTotale String
+////2_2_1_12AliquotaIVA
+//	SMAliquotaIVA String
+////2_2_1_13Ritenuta
+//	SMRitenuta String
+////2_2_1_14Natura
+//	SMNatura String
+////2_2_1_15RiferimentoAmministrazione
+//	SMRiferimentoAmministrazione String
+////2_2_1_16AltriDatiGestionali
+////2_2_1_16_1TipoDato
+//	TipoDato String
+////2_2_1_16_2RiferimentoTesto
+//	RiferimentoTesto String
+////2_2_1_16_3RiferimentoNumero
+//	RiferimentoNumero String
+////2_2_1_16_4RiferimentoData
+//	RiferimentoData String
+////2_2_2DatiRiepilogo
+////2_2_2_1AliquotaIVA
+//	DRAliquotaIVA String
+////2_2_2_2Natura
+//	DRNatura String
+////2_2_2_3SpeseAccessorie
+//	DRSpeseAccessorie String
+////2_2_2_4Arrotondamento
+//	DRArrotondamento String
+////2_2_2_5ImponibileImporto
+//	DRImponibileImporto String
+////2_2_2_6Imposta
+//	DRImposta String
+////2_2_2_7EsigibilitaIVA
+//	DREsigibilitaIVA String
+////2_2_2_8RiferimentoNormativo
+//	DRRiferimentoNormativo String
+//2_3DatiVeicoli
+//2_3_1Data
+	DVData String maxlength(10)
+//2_3_2TotalePercorso
+	DVTotalePercorso String maxlength(15)
+	
+	
+////2_4DatiPagamento
+////2_4_1CondizioniPagamento
+//	CondizioniPagamento String
+////2_4_2DettaglioPagamento
+////2_4_2_1Beneficiario
+//	Beneficiario String
+////2_4_2_2ModalitaPagamento
+//	ModalitaPagamento String
+////2_4_2_3DataRiferimentoTerminiPagamento
+//	DataRiferimentoTerminiPagamento String
+////2_4_2_4GiorniTerminiPagamento
+//	GiorniTerminiPagamento String
+////2_4_2_5DataScadenzaPagamento
+//	DataScadenzaPagamento String
+////2_4_2_6ImportoPagamento
+//	ImportoPagamento String
+////2_4_2_7CodUfficioPostale
+//	CodUfficioPostale String
+////2_4_2_8CognomeQuietanzante
+//	CognomeQuietanzante String
+////2_4_2_9NomeQuietanzante
+//	NomeQuietanzante String
+////2_4_2_10CFQuietanzante
+//	CFQuietanzante String
+////2_4_2_11TitoloQuietanzante
+//	TitoloQuietanzante String
+////2_4_2_12IstitutoFinanziario
+//	IstitutoFinanziario String
+////2_4_2_13IBAN
+//	IBAN String
+////2_4_2_14ABI
+//	ABI String
+////2_4_2_15CAB
+//	CAB String
+////2_4_2_16BIC
+//	BIC String
+////2_4_2_17ScontoPagamentoAnticipato
+//	ScontoPagamentoAnticipato String
+////2_4_2_18DataLimitePagamentoAnticipato
+//	DataLimitePagamentoAnticipato String
+////2_4_2_19PenalitaPagamentiRitardati
+//	PenalitaPagamentiRitardati String
+////2_4_2_20DataDecorrenzaPenale
+//	DataDecorrenzaPenale String
+////2_4_2_21CodicePagamento
+//	CodicePagamento String
+
+
+////2_5Allegati
+////2_5_1NomeAttachment
+//	NomeAttachment String
+////2_5_2AlgoritmoCompressione
+//	AlgoritmoCompressione String
+////2_5_3FormatoAttachment
+//	FormatoAttachment String
+////2_5_4DescrizioneAttachment
+//	DescrizioneAttachment String
+////2_5_5Attachment
+//	Attachment String
+}
+
+entity CassaPrevidenziale { 
+//2_1_1_7DatiCassaPrevidenziale
+//2_1_1_7_1TipoCassa
+	TipoCassa String maxlength(4)
+//2_1_1_7_2AlCassa
+	AlCassa String maxlength(6)
+//2_1_1_7_3ImportoContributoCassa
+	ImportoContributoCassa String maxlength(15)
+//2_1_1_7_4ImponibileCassa
+	ImponibileCassa String maxlength(15)
+//2_1_1_7_5AliquotaIVA
+	AliquotaIVA String maxlength(6)
+//2_1_1_7_6Ritenuta
+	Ritenuta String maxlength(2)
+//2_1_1_7_7Natura
+	Natura String maxlength(2)
+//2_1_1_7_8RiferimentoAmministrazione
+	RiferimentoAmministrazione String maxlength(20)
+}
+
+
+entity ScontoMaggiorazione {
+//2_1_1_8ScontoMaggiorazione
+//2_1_1_8_1Tipo
+	Tipo String maxlength(2)
+//2_1_1_8_2Percentuale
+	Percentuale String maxlength(6)
+//2_1_1_8_3Importo
+	Importo String maxlength(15)
+}
+
+
+entity Causale {
+//2_1_1_11Causale
+	Causale String maxlength(200)
+}
+
+entity OrdineAcquisto {
+//2_1_2DatiOrdineAcquisto
+//2_1_2_1RiferimentoNumeroLinea
+//2_1_2_2IdDocumento
+	IdDocumento String maxlength(20)
+//2_1_2_3Data
+	DOAData String maxlength(10)
+//2_1_2_4NumItem
+	NumItem String maxlength(20)
+//2_1_2_5CodiceCommessaConvenzione
+	CodiceCommessaConvenzione String maxlength(100)
+//2_1_2_6CodiceCUP
+	CodiceCUP String maxlength(15)
+//2_1_2_7CodiceCIG
+	CodiceCIG String maxlength(15)
+}
+
+entity NumeroLinea {
+	RiferimentoNumeroLinea String maxlength(4)
+}
+
+entity Contratto {
+//2_1_2DatiOrdineAcquisto
+//2_1_2_1RiferimentoNumeroLinea
+//2_1_2_2IdDocumento
+	IdDocumento String maxlength(20)
+//2_1_2_3Data
+	DOAData String maxlength(10)
+//2_1_2_4NumItem
+	NumItem String maxlength(20)
+//2_1_2_5CodiceCommessaConvenzione
+	CodiceCommessaConvenzione String maxlength(100)
+//2_1_2_6CodiceCUP
+	CodiceCUP String maxlength(15)
+//2_1_2_7CodiceCIG
+	CodiceCIG String maxlength(15)
+}
+
+entity Convenzione {
+//2_1_2DatiOrdineAcquisto
+//2_1_2_1RiferimentoNumeroLinea
+//2_1_2_2IdDocumento
+	IdDocumento String maxlength(20)
+//2_1_2_3Data
+	DOAData String maxlength(10)
+//2_1_2_4NumItem
+	NumItem String maxlength(20)
+//2_1_2_5CodiceCommessaConvenzione
+	CodiceCommessaConvenzione String maxlength(100)
+//2_1_2_6CodiceCUP
+	CodiceCUP String maxlength(15)
+//2_1_2_7CodiceCIG
+	CodiceCIG String maxlength(15)
+}
+
+entity Ricezione {
+//2_1_2DatiOrdineAcquisto
+//2_1_2_1RiferimentoNumeroLinea
+//2_1_2_2IdDocumento
+	IdDocumento String maxlength(20)
+//2_1_2_3Data
+	DOAData String maxlength(10)
+//2_1_2_4NumItem
+	NumItem String maxlength(20)
+//2_1_2_5CodiceCommessaConvenzione
+	CodiceCommessaConvenzione String maxlength(100)
+//2_1_2_6CodiceCUP
+	CodiceCUP String maxlength(15)
+//2_1_2_7CodiceCIG
+	CodiceCIG String maxlength(15)
+}
+
+entity FatturaCollegata {
+//2_1_2DatiOrdineAcquisto
+//2_1_2_1RiferimentoNumeroLinea
+//2_1_2_2IdDocumento
+	IdDocumento String maxlength(20)
+//2_1_2_3Data
+	DOAData String maxlength(10)
+//2_1_2_4NumItem
+	NumItem String maxlength(20)
+//2_1_2_5CodiceCommessaConvenzione
+	CodiceCommessaConvenzione String maxlength(100)
+//2_1_2_6CodiceCUP
+	CodiceCUP String maxlength(15)
+//2_1_2_7CodiceCIG
+	CodiceCIG String maxlength(15)
+}
+
+entity SAL {
+//2_1_7DatiSAL
+//2_1_7_1RiferimentoFase
+	RiferimentoFase String maxlength(3)
+}
+
+entity DDT {
+//2_1_8DatiDDT
+//2_1_8_1NumeroDDT
+	NumeroDDT String maxlength(20)
+//2_1_8_2DataDDT
+	DataDDT String maxlength(10)
+//2_1_8_3RiferimentoNumeroLinea
+//	DDTRiferimentoNumeroLinea String
+}
+
+
+entity DettaglioLinea {
+//2_2DatiBeniServizi
+//2_2_1DettaglioLinee
+//2_2_1_1NumeroLinea
+	NumeroLinea String maxlength(4)
+//2_2_1_2TipoCessionePrestazione
+	TipoCessionePrestazione String maxlength(2)
+////2_2_1_3CodiceArticolo
+////2_2_1_3_1CodiceTipo
+//	CodiceTipo String
+////2_2_1_3_2CodiceValore
+//	CodiceValore String
+//2_2_1_4Descrizione
+	DLDescrizione String maxlength(1000)
+//2_2_1_5Quantita
+	Quantita String maxlength(21)
+//2_2_1_6UnitaMisura
+	UnitaMisura String maxlength(10)
+//2_2_1_7DataInizioPeriodo
+	DataInizioPeriodo String maxlength(10)
+//2_2_1_8DataFinePeriodo
+	DataFinePeriodo String maxlength(10)
+//2_2_1_9PrezzoUnitario
+	PrezzoUnitario String maxlength(21)
+////2_2_1_10ScontoMaggiorazione
+////2_2_1_10_1Tipo
+//	SMTipo String
+////2_2_1_10_2Percentuale
+//	SMPercentuale String
+////2_2_1_10_3Importo
+//	SMImporto String
+//2_2_1_11PrezzoTotale
+	SMPrezzoTotale String maxlength(21)
+//2_2_1_12AliquotaIVA
+	SMAliquotaIVA String maxlength(6)
+//2_2_1_13Ritenuta
+	SMRitenuta String maxlength(2)
+//2_2_1_14Natura
+	SMNatura String maxlength(2)
+//2_2_1_15RiferimentoAmministrazione
+	SMRiferimentoAmministrazione String maxlength(20)
+////2_2_1_16AltriDatiGestionali
+////2_2_1_16_1TipoDato
+//	TipoDato String
+////2_2_1_16_2RiferimentoTesto
+//	RiferimentoTesto String
+////2_2_1_16_3RiferimentoNumero
+//	RiferimentoNumero String
+////2_2_1_16_4RiferimentoData
+//	RiferimentoData String
+}
+
+entity DatiRiepilogo {
+//2_2_2DatiRiepilogo
+//2_2_2_1AliquotaIVA
+	DRAliquotaIVA String maxlength(6)
+//2_2_2_2Natura
+	DRNatura String maxlength(2)
+//2_2_2_3SpeseAccessorie
+	DRSpeseAccessorie String maxlength(15)
+//2_2_2_4Arrotondamento
+	DRArrotondamento String maxlength(21)
+//2_2_2_5ImponibileImporto
+	DRImponibileImporto String maxlength(15)
+//2_2_2_6Imposta
+	DRImposta String maxlength(15)
+//2_2_2_7EsigibilitaIVA
+	DREsigibilitaIVA String maxlength(1)
+//2_2_2_8RiferimentoNormativo
+	DRRiferimentoNormativo String maxlength(100)
+}
+
+
+entity CodiceArticolo {
+//2_2_1_3CodiceArticolo
+//2_2_1_3_1CodiceTipo
+	CodiceTipo String maxlength(35)
+//2_2_1_3_2CodiceValore
+	CodiceValore String maxlength(35)
+}
+
+entity ScontoMaggiorazione {
+//2_2_1_10ScontoMaggiorazione
+//2_2_1_10_1Tipo
+	SMTipo String maxlength(2)
+//2_2_1_10_2Percentuale
+	SMPercentuale String maxlength(6)
+//2_2_1_10_3Importo
+	SMImporto String maxlength(15)
+}
+
+entity AltriDatiGestionali {
+//2_2_1_16AltriDatiGestionali
+//2_2_1_16_1TipoDato
+	TipoDato String maxlength(10)
+//2_2_1_16_2RiferimentoTesto
+	RiferimentoTesto String maxlength(60)
+//2_2_1_16_3RiferimentoNumero
+	RiferimentoNumero String maxlength(21)
+//2_2_1_16_4RiferimentoData
+	RiferimentoData String maxlength(10)
+}
+
+
+entity DatiPagamento {
+//2_4DatiPagamento
+//2_4_1CondizioniPagamento
+	CondizioniPagamento String maxlength(4)
+////2_4_2DettaglioPagamento
+////2_4_2_1Beneficiario
+//	Beneficiario String
+////2_4_2_2ModalitaPagamento
+//	ModalitaPagamento String
+////2_4_2_3DataRiferimentoTerminiPagamento
+//	DataRiferimentoTerminiPagamento String
+////2_4_2_4GiorniTerminiPagamento
+//	GiorniTerminiPagamento String
+////2_4_2_5DataScadenzaPagamento
+//	DataScadenzaPagamento String
+////2_4_2_6ImportoPagamento
+//	ImportoPagamento String
+////2_4_2_7CodUfficioPostale
+//	CodUfficioPostale String
+////2_4_2_8CognomeQuietanzante
+//	CognomeQuietanzante String
+////2_4_2_9NomeQuietanzante
+//	NomeQuietanzante String
+////2_4_2_10CFQuietanzante
+//	CFQuietanzante String
+////2_4_2_11TitoloQuietanzante
+//	TitoloQuietanzante String
+////2_4_2_12IstitutoFinanziario
+//	IstitutoFinanziario String
+////2_4_2_13IBAN
+//	IBAN String
+////2_4_2_14ABI
+//	ABI String
+////2_4_2_15CAB
+//	CAB String
+////2_4_2_16BIC
+//	BIC String
+////2_4_2_17ScontoPagamentoAnticipato
+//	ScontoPagamentoAnticipato String
+////2_4_2_18DataLimitePagamentoAnticipato
+//	DataLimitePagamentoAnticipato String
+////2_4_2_19PenalitaPagamentiRitardati
+//	PenalitaPagamentiRitardati String
+////2_4_2_20DataDecorrenzaPenale
+//	DataDecorrenzaPenale String
+////2_4_2_21CodicePagamento
+//	CodicePagamento String
+}
+
+entity DettaglioPagamento {
+//2_4_2DettaglioPagamento
+//2_4_2_1Beneficiario
+	Beneficiario String maxlength(200)
+//2_4_2_2ModalitaPagamento
+	ModalitaPagamento String maxlength(4)
+//2_4_2_3DataRiferimentoTerminiPagamento
+	DataRiferimentoTerminiPagamento String maxlength(10)
+//2_4_2_4GiorniTerminiPagamento
+	GiorniTerminiPagamento String maxlength(5)
+//2_4_2_5DataScadenzaPagamento
+	DataScadenzaPagamento String maxlength(10)
+//2_4_2_6ImportoPagamento
+	ImportoPagamento String maxlength(15)
+//2_4_2_7CodUfficioPostale
+	CodUfficioPostale String maxlength(20)
+//2_4_2_8CognomeQuietanzante
+	CognomeQuietanzante String maxlength(60)
+//2_4_2_9NomeQuietanzante
+	NomeQuietanzante String maxlength(60)
+//2_4_2_10CFQuietanzante
+	CFQuietanzante String maxlength(16)
+//2_4_2_11TitoloQuietanzante
+	TitoloQuietanzante String maxlength(10)
+//2_4_2_12IstitutoFinanziario
+	IstitutoFinanziario String maxlength(80)
+//2_4_2_13IBAN
+	IBAN String maxlength(34)
+//2_4_2_14ABI
+	ABI String maxlength(5)
+//2_4_2_15CAB
+	CAB String maxlength(5)
+//2_4_2_16BIC
+	BIC String maxlength(11)
+//2_4_2_17ScontoPagamentoAnticipato
+	ScontoPagamentoAnticipato String maxlength(15)
+//2_4_2_18DataLimitePagamentoAnticipato
+	DataLimitePagamentoAnticipato String maxlength(10)
+//2_4_2_19PenalitaPagamentiRitardati
+	PenalitaPagamentiRitardati String maxlength(15)
+//2_4_2_20DataDecorrenzaPenale
+	DataDecorrenzaPenale String maxlength(10)
+//2_4_2_21CodicePagamento
+	CodicePagamento String maxlength(60)
+}
+
+
+entity Allegato {
+//2_5Allegati
+//2_5_1NomeAttachment
+	NomeAttachment String maxlength(60)
+//2_5_2AlgoritmoCompressione
+	AlgoritmoCompressione String maxlength(10)
+//2_5_3FormatoAttachment
+	FormatoAttachment String maxlength(10)
+//2_5_4DescrizioneAttachment
+	DescrizioneAttachment String maxlength(100)
+//2_5_5Attachment
+	Attachment String maxlength(1000)
+}
+
+
+relationship OneToMany {
+	FAHeader to FABody
+}
+
+relationship OneToMany {
+  FABody to Causale
+  FABody to CassaPrevidenziale
+  FABody to ScontoMaggiorazione
+  FABody to OrdineAcquisto
+  FABody to Contratto
+  FABody to Convenzione
+  FABody to Ricezione
+  FABody to FatturaCollegata
+  FABody to SAL
+  FABody to DDT
+  FABody to DettaglioLinea
+  FABody to DatiRiepilogo
+  FABody to DatiPagamento
+  FABody to Allegato
+}
+
+relationship OneToMany {
+	DettaglioLinea to CodiceArticolo
+	DettaglioLinea to ScontoMaggiorazione
+	DettaglioLinea to AltriDatiGestionali
+}
+
+relationship OneToMany {
+	OrdineAcquisto to NumeroLinea 
+	DDT to NumeroLinea
+}
+relationship OneToMany {
+	DatiPagamento to DettaglioPagamento 
+}
+
+service FAHeader with serviceClass
+paginate FAHeader with pagination
+
+microservice FAHeader, FABody, CassaPrevidenziale, ScontoMaggiorazione, Causale, OrdineAcquisto, NumeroLinea, Contratto, Convenzione, Ricezione, FatturaCollegata, SAL, DDT, DettaglioLinea, DatiRiepilogo,CodiceArticolo, ScontoMaggiorazione, AltriDatiGestionali, DatiPagamento, DettaglioPagamento, Allegato with invoice

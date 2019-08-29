@@ -1,0 +1,40 @@
+{
+    "name": "DatiPagamento",
+    "fields": [
+        {
+            "fieldName": "condizioniPagamento",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "dettaglioPagamento",
+            "otherEntityRelationshipName": "datiPagamento",
+            "relationshipName": "dettaglioPagamento"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "fABody",
+            "otherEntityRelationshipName": "datiPagamento",
+            "relationshipName": "fABody",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190829124137",
+    "entityTableName": "dati_pagamento",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "invoice"
+    ],
+    "microserviceName": "invoice"
+}

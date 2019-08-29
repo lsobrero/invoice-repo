@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ScontoMaggiorazione.
+    -->
+    <changeSet id="20190829124123-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="fabody_id"
+                                 baseTableName="sconto_maggiorazione"
+                                 constraintName="fk_sconto_maggiorazione_fabody_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fa_body"/>
+
+        <addForeignKeyConstraint baseColumnNames="dettaglio_linea_id"
+                                 baseTableName="sconto_maggiorazione"
+                                 constraintName="fk_sconto_maggiorazione_dettaglio_linea_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dettaglio_linea"/>
+
+    </changeSet>
+</databaseChangeLog>

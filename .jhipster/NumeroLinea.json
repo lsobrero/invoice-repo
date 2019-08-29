@@ -1,0 +1,41 @@
+{
+    "name": "NumeroLinea",
+    "fields": [
+        {
+            "fieldName": "riferimentoNumeroLinea",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "ordineAcquisto",
+            "otherEntityRelationshipName": "numeroLinea",
+            "relationshipName": "ordineAcquisto",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dDT",
+            "otherEntityRelationshipName": "numeroLinea",
+            "relationshipName": "dDT",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190829124126",
+    "entityTableName": "numero_linea",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "invoice"
+    ],
+    "microserviceName": "invoice"
+}

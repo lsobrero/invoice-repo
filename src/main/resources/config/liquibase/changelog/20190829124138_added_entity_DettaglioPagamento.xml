@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <!--
+        Added the entity DettaglioPagamento.
+    -->
+    <changeSet id="20190829124138-1" author="jhipster">
+        <createTable tableName="dettaglio_pagamento">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="beneficiario" type="varchar(200)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="modalita_pagamento" type="varchar(4)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="data_riferimento_termini_pagamento" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="giorni_termini_pagamento" type="varchar(5)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="data_scadenza_pagamento" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="importo_pagamento" type="varchar(15)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cod_ufficio_postale" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cognome_quietanzante" type="varchar(60)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nome_quietanzante" type="varchar(60)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="c_f_quietanzante" type="varchar(16)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="titolo_quietanzante" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="istituto_finanziario" type="varchar(80)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="i_ban" type="varchar(34)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="a_bi" type="varchar(5)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="c_ab" type="varchar(5)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="b_ic" type="varchar(11)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sconto_pagamento_anticipato" type="varchar(15)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="data_limite_pagamento_anticipato" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="penalita_pagamenti_ritardati" type="varchar(15)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="data_decorrenza_penale" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="codice_pagamento" type="varchar(60)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dati_pagamento_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+
+    </changeSet>
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20190829124138-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/data/dettaglio_pagamento.csv"
+                  separator=";"
+                  tableName="dettaglio_pagamento"
+                  context="dev">
+            <column name="id" type="numeric"/>
+            <column name="beneficiario" type="string"/>
+            <column name="modalita_pagamento" type="string"/>
+            <column name="data_riferimento_termini_pagamento" type="string"/>
+            <column name="giorni_termini_pagamento" type="string"/>
+            <column name="data_scadenza_pagamento" type="string"/>
+            <column name="importo_pagamento" type="string"/>
+            <column name="cod_ufficio_postale" type="string"/>
+            <column name="cognome_quietanzante" type="string"/>
+            <column name="nome_quietanzante" type="string"/>
+            <column name="c_f_quietanzante" type="string"/>
+            <column name="titolo_quietanzante" type="string"/>
+            <column name="istituto_finanziario" type="string"/>
+            <column name="i_ban" type="string"/>
+            <column name="a_bi" type="string"/>
+            <column name="c_ab" type="string"/>
+            <column name="b_ic" type="string"/>
+            <column name="sconto_pagamento_anticipato" type="string"/>
+            <column name="data_limite_pagamento_anticipato" type="string"/>
+            <column name="penalita_pagamenti_ritardati" type="string"/>
+            <column name="data_decorrenza_penale" type="string"/>
+            <column name="codice_pagamento" type="string"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="20190829124138-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

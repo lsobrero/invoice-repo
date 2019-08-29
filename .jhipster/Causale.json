@@ -1,0 +1,34 @@
+{
+    "name": "Causale",
+    "fields": [
+        {
+            "fieldName": "causale",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 200
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "fABody",
+            "otherEntityRelationshipName": "causale",
+            "relationshipName": "fABody",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190829124124",
+    "entityTableName": "causale",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "invoice"
+    ],
+    "microserviceName": "invoice"
+}

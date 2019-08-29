@@ -1,0 +1,58 @@
+{
+    "name": "AltriDatiGestionali",
+    "fields": [
+        {
+            "fieldName": "tipoDato",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "riferimentoTesto",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 60
+        },
+        {
+            "fieldName": "riferimentoNumero",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 21
+        },
+        {
+            "fieldName": "riferimentoData",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dettaglioLinea",
+            "otherEntityRelationshipName": "altriDatiGestionali",
+            "relationshipName": "dettaglioLinea",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190829124136",
+    "entityTableName": "altri_dati_gestionali",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "invoice"
+    ],
+    "microserviceName": "invoice"
+}

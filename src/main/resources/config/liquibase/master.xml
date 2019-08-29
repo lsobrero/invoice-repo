@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql, mariadb"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124120_added_entity_FAHeader.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124121_added_entity_FABody.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124122_added_entity_CassaPrevidenziale.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124123_added_entity_ScontoMaggiorazione.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124124_added_entity_Causale.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124125_added_entity_OrdineAcquisto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124126_added_entity_NumeroLinea.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124127_added_entity_Contratto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124128_added_entity_Convenzione.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124129_added_entity_Ricezione.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124130_added_entity_FatturaCollegata.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124131_added_entity_SAL.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124132_added_entity_DDT.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124133_added_entity_DettaglioLinea.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124134_added_entity_DatiRiepilogo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124135_added_entity_CodiceArticolo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124136_added_entity_AltriDatiGestionali.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124137_added_entity_DatiPagamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124138_added_entity_DettaglioPagamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124139_added_entity_Allegato.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190829124121_added_entity_constraints_FABody.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124122_added_entity_constraints_CassaPrevidenziale.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124123_added_entity_constraints_ScontoMaggiorazione.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124124_added_entity_constraints_Causale.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124125_added_entity_constraints_OrdineAcquisto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124126_added_entity_constraints_NumeroLinea.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124127_added_entity_constraints_Contratto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124128_added_entity_constraints_Convenzione.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124129_added_entity_constraints_Ricezione.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124130_added_entity_constraints_FatturaCollegata.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124131_added_entity_constraints_SAL.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124132_added_entity_constraints_DDT.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124133_added_entity_constraints_DettaglioLinea.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124134_added_entity_constraints_DatiRiepilogo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124135_added_entity_constraints_CodiceArticolo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124136_added_entity_constraints_AltriDatiGestionali.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124137_added_entity_constraints_DatiPagamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124138_added_entity_constraints_DettaglioPagamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829124139_added_entity_constraints_Allegato.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

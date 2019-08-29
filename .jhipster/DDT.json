@@ -1,0 +1,48 @@
+{
+    "name": "DDT",
+    "fields": [
+        {
+            "fieldName": "numeroDDT",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "dataDDT",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "numeroLinea",
+            "otherEntityRelationshipName": "dDT",
+            "relationshipName": "numeroLinea"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "fABody",
+            "otherEntityRelationshipName": "dDT",
+            "relationshipName": "fABody",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190829124132",
+    "entityTableName": "ddt",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "invoice"
+    ],
+    "microserviceName": "invoice"
+}

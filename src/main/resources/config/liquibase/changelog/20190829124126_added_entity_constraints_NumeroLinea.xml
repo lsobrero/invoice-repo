@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity NumeroLinea.
+    -->
+    <changeSet id="20190829124126-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="ordine_acquisto_id"
+                                 baseTableName="numero_linea"
+                                 constraintName="fk_numero_linea_ordine_acquisto_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ordine_acquisto"/>
+
+        <addForeignKeyConstraint baseColumnNames="ddt_id"
+                                 baseTableName="numero_linea"
+                                 constraintName="fk_numero_linea_ddt_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ddt"/>
+
+    </changeSet>
+</databaseChangeLog>

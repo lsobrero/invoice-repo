@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity DatiRiepilogo.
+    -->
+    <changeSet id="20190829124134-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="fabody_id"
+                                 baseTableName="dati_riepilogo"
+                                 constraintName="fk_dati_riepilogo_fabody_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fa_body"/>
+
+    </changeSet>
+</databaseChangeLog>

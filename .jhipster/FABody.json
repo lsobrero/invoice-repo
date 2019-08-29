@@ -1,0 +1,455 @@
+{
+    "name": "FABody",
+    "fields": [
+        {
+            "fieldName": "tipoDocumento",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4
+        },
+        {
+            "fieldName": "divisa",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 3
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "numero",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "tipoRitenuta",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4
+        },
+        {
+            "fieldName": "importoRitenuta",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 15
+        },
+        {
+            "fieldName": "aliquotaRitenuta",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 6
+        },
+        {
+            "fieldName": "causalePagamento",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 2
+        },
+        {
+            "fieldName": "bolloVirtuale",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 2
+        },
+        {
+            "fieldName": "importoBollo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 15
+        },
+        {
+            "fieldName": "importoTotaleDocumento",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 15
+        },
+        {
+            "fieldName": "arrotondamento",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 15
+        },
+        {
+            "fieldName": "art73",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 2
+        },
+        {
+            "fieldName": "idPaese",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 2
+        },
+        {
+            "fieldName": "idCodice",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 28
+        },
+        {
+            "fieldName": "codiceFiscale",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 16
+        },
+        {
+            "fieldName": "denominazione",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 80
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 60
+        },
+        {
+            "fieldName": "cognome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 60
+        },
+        {
+            "fieldName": "titolo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "codEORI",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 17
+        },
+        {
+            "fieldName": "numeroLicenzaGuida",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "mezzoTrasporto",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 80
+        },
+        {
+            "fieldName": "causaleTrasporto",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "numeroColli",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4
+        },
+        {
+            "fieldName": "descrizione",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "unitaMisuraPeso",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "pesoLordo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 7
+        },
+        {
+            "fieldName": "pesoNetto",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 7
+        },
+        {
+            "fieldName": "dataOraRitiro",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 19
+        },
+        {
+            "fieldName": "dataInizioTrasporto",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "tipoResa",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 3
+        },
+        {
+            "fieldName": "indirizzo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 60
+        },
+        {
+            "fieldName": "numeroCivico",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 8
+        },
+        {
+            "fieldName": "cAP",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 5
+        },
+        {
+            "fieldName": "comune",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 60
+        },
+        {
+            "fieldName": "provincia",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 2
+        },
+        {
+            "fieldName": "nazione",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 2
+        },
+        {
+            "fieldName": "dataOraConsegna",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 19
+        },
+        {
+            "fieldName": "numeroFatturaPrincipale",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "dataFatturaPrincipale",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "dVData",
+            "javadoc": "possibile tabella esterna",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "dVTotalePercorso",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 15
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "causale",
+            "otherEntityRelationshipName": "fABody",
+            "relationshipName": "causale"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "cassaPrevidenziale",
+            "otherEntityRelationshipName": "fABody",
+            "relationshipName": "cassaPrevidenziale"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "scontoMaggiorazione",
+            "otherEntityRelationshipName": "fABody",
+            "relationshipName": "scontoMaggiorazione"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "ordineAcquisto",
+            "otherEntityRelationshipName": "fABody",
+            "relationshipName": "ordineAcquisto"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "contratto",
+            "otherEntityRelationshipName": "fABody",
+            "relationshipName": "contratto"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "convenzione",
+            "otherEntityRelationshipName": "fABody",
+            "relationshipName": "convenzione"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "ricezione",
+            "otherEntityRelationshipName": "fABody",
+            "relationshipName": "ricezione"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "fatturaCollegata",
+            "otherEntityRelationshipName": "fABody",
+            "relationshipName": "fatturaCollegata"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "sAL",
+            "otherEntityRelationshipName": "fABody",
+            "relationshipName": "sAL"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "dDT",
+            "otherEntityRelationshipName": "fABody",
+            "relationshipName": "dDT"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "dettaglioLinea",
+            "otherEntityRelationshipName": "fABody",
+            "relationshipName": "dettaglioLinea"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "datiRiepilogo",
+            "otherEntityRelationshipName": "fABody",
+            "relationshipName": "datiRiepilogo"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "datiPagamento",
+            "otherEntityRelationshipName": "fABody",
+            "relationshipName": "datiPagamento"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "allegato",
+            "otherEntityRelationshipName": "fABody",
+            "relationshipName": "allegato"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "fAHeader",
+            "otherEntityRelationshipName": "fABody",
+            "relationshipName": "fAHeader",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190829124121",
+    "entityTableName": "fa_body",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "invoice"
+    ],
+    "microserviceName": "invoice"
+}

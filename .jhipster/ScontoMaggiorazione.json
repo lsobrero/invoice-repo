@@ -1,0 +1,57 @@
+{
+    "name": "ScontoMaggiorazione",
+    "fields": [
+        {
+            "fieldName": "sMTipo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 2
+        },
+        {
+            "fieldName": "sMPercentuale",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 6
+        },
+        {
+            "fieldName": "sMImporto",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 15
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "fABody",
+            "otherEntityRelationshipName": "scontoMaggiorazione",
+            "relationshipName": "fABody",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dettaglioLinea",
+            "otherEntityRelationshipName": "scontoMaggiorazione",
+            "relationshipName": "dettaglioLinea",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190829124123",
+    "entityTableName": "sconto_maggiorazione",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "invoice"
+    ],
+    "microserviceName": "invoice"
+}

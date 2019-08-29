@@ -1,0 +1,42 @@
+{
+    "name": "CodiceArticolo",
+    "fields": [
+        {
+            "fieldName": "codiceTipo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 35
+        },
+        {
+            "fieldName": "codiceValore",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 35
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dettaglioLinea",
+            "otherEntityRelationshipName": "codiceArticolo",
+            "relationshipName": "dettaglioLinea",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190829124135",
+    "entityTableName": "codice_articolo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "invoice"
+    ],
+    "microserviceName": "invoice"
+}
