@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration salt="invoice-config"
+    jdbcurl="jdbc:postgresql://localhost:5432/invoice" userid="invoice">
+    <anonymizerclass>my.demo.java.SmurfAnonymizer</anonymizerclass>
+    <anonymizerclass>org.sf.anonimatron.CommunityAnonymizer</anonymizerclass>
+    <table name="fa_header">
+
+<column name="trasmittente_id_paese" type="RANDOMDIGITS"  size="-1"/>
+<column name="trasmittente_id_codice" type="STRING"  size="-1"/>
+<!-- column name="progressivo_invio" type="ROMAN_NAME" size="-1"/ -->
+<!-- column name="formato_trasmissione" type="ROMAN_NAME" size="-1"/ -->
+<column name="codice_destinatario" type="RANDOMDIGITS"  size="-1"/>
+<column name="telefono" type="RANDOMDIGITS" size="-1"/>
+<column name="email" type="EMAIL_ADDRESS" size="-1"/>
+<column name="p_ec_destinatario" type="EMAIL_ADDRESS" size="-1"/>
+<column name="c_pda_id_paese" type="RANDOMDIGITS" size="-1"/>
+<column name="c_pda_id_codice" type="STRING" size="-1"/>
+<column name="c_pda_codice_fiscale" type="STRING" size="-1"/>
+<column name="c_pa_denominazione" type="STRNG" size="-1"/>
+<column name="c_pa_nome" type="ROMAN_NAME" size="-1"/>
+<column name="c_pa_cognome" type="ROMAN_NAME" size="-1"/>
+<column name="c_pa_titolo" type="RANDOMDIGITS" size="-1"/>
+<column name="c_pa_cod_eori" type="STRING" size="-1"/>
+<column name="c_pa_albo_professionale" type="STRING" size="-1"/>
+<column name="c_pa_provincia_albo" type="RANDOMDIGITS" size="-1"/>
+<column name="c_pa_numero_iscrizione_albo" type="RANDOMDIGITS" size="-1"/>
+
+
+
+<column name="c_pa_data_iscrizione_albo" type="RANDOMDIGITS"/>
+<column name="c_pa_regime_fiscale" type="RANDOMDIGITS" />
+<column name="c_ps_indirizzo" type="STRING" size="-1"/>
+<column name="c_ps_numero_civico" type="RANDOMDIGITS" size="-1"/>
+<column name="c_pscap" type="RANDOMDIGITS" size="-1"/>
+<column name="c_ps_comune" type="STRING" size="-1"/>
+<column name="c_ps_provincia" type="RANDOMDIGITS" size="-1"/>
+<column name="c_ps_nazione" type="RANDOMDIGITS" size="-1"/>
+<column name="s_o_indirizzo" type="STRING" size="-1"/>
+<column name="s_o_numero_civico" type="RANDOMDIGITS" size="-1"/>
+<column name="s_ocap" type="RANDOMDIGITS" size="-1"/>
+<column name="s_o_comune" type="STRING" size="-1"/>
+<column name="s_o_provincia" type="RANDOMDIGITS" size="-1"/>
+<column name="s_o_nazione" type="RANDOMDIGITS" size="-1"/>
+<column name="s_oirea_ufficio" type="RANDOMDIGITS" size="-1"/>
+<column name="s_oirea_numero_rea" type="RANDOMDIGITS" size="-1"/>
+<column name="s_oirea_capitale_sociale" type="RANDOMDIGITS" size="-1"/>
+<column name="s_oirea_socio_unico" type="RANDOMDIGITS" size="-1"/>
+<column name="s_oirea_stato_liquidazione" type="RANDOMDIGITS" size="-1"/>
+<column name="s_oc_telefono" type="RANDOMDIGITS" size="-1"/>
+<column name="s_oc_fax" type="RANDOMDIGITS" size="-1"/>
+<column name="s_oc_email" type="EMAIL_ADDRESS" size="-1"/>
+<column name="s_oc_riferimento_amministrazione" type="STRING" size="-1"/>
+<column name="r_fda_id_paese" type="RANDOMDIGITS" size="-1"/>
+<column name="r_fda_id_codice" type="STRING" size="-1"/>
+
+
+<column name="r_fda_codice_fiscale" type="STRING" size="-1"/>
+<column name="r_fa_denominazione" type="STRING" size="-1"/>
+<column name="r_fa_nome" type="ROMAN_NAME" size="-1"/>
+<column name="r_fa_cognome" type="ROMAN_NAME" size="-1"/>
+<column name="r_fa_titolo" type="RANDOMDIGITS" size="-1"/>
+<column name="r_fa_cod_eori" type="STRING" size="-1"/>
+<column name="c_cda_id_paese" type="RANDOMDIGITS" size="-1"/>
+<column name="c_cda_id_codice" type="STRING" size="-1"/>
+<column name="c_cda_codice_fiscale" type="STRING" size="-1"/>
+<column name="c_ca_denominazione" type="STRING" size="-1"/>
+<column name="c_ca_nome" type="ROMAN_NAME" size="-1"/>
+<column name="c_ca_cognome" type="ROMAN_NAME" size="-1"/>
+<column name="c_ca_titolo" type="RANDOMDIGITS" size="-1"/>
+
+
+<column name="c_ca_cod_eori" type="STRING" size="-1"/>
+<column name="c_cs_indirizzo" type="STRING" size="-1"/>
+<column name="c_cs_numero_civico" type="RANDOMDIGITS" size="-1"/>
+<column name="c_cscap" type="RANDOMDIGITS" size="-1"/>
+<column name="c_cs_comune" type="STRING" size="-1"/>
+<column name="c_cs_provincia" type="RANDOMDIGITS" size="-1"/>
+<column name="c_cs_nazione" type="RANDOMDIGITS" size="-1"/>
+<column name="c_cso_indirizzo" type="STRING" size="-1"/>
+<column name="c_cso_numero_civico" type="RANDOMDIGITS" size="-1"/>
+<column name="c_csocap" type="RANDOMDIGITS" size="-1"/>
+<column name="c_cso_comune" type="STRING" size="-1"/>
+<column name="c_cso_provincia" type="RANDOMDIGITS" size="-1"/>
+<column name="c_cso_nazione" type="RANDOMDIGITS" size="-1"/>
+<column name="c_crf_id_paese" type="RANDOMDIGITS" size="-1"/>
+<column name="c_crf_id_codice" type="STRING" size="-1"/>
+<column name="c_crf_denominazione" type="STRING" size="-1"/>
+<column name="c_crf_nome" type="ROMAN_NAME" size="-1"/>
+<column name="c_crf_cognome" type="ROMAN_NAME" size="-1"/>
+<column name="t_ida_id_paese" type="RANDOMDIGITS" size="-1"/>
+<column name="t_ida_id_codice" type="STRING" size="-1"/>
+<column name="t_ida_codice_fiscale" type="STRING" size="-1"/>
+<column name="t_ia_denominazione" type="STRING" size="-1"/>
+<column name="t_ia_nome" type="ROMAN_NAME" size="-1"/>
+<column name="t_ia_cognome" type="ROMAN_NAME" size="-1"/>
+<column name="t_ia_titolo" type="RANDOMDIGITS" size="-1"/>
+<column name="t_ia_cod_eori" type="STRING" size="-1"/>
+<column name="soggetto_emittente" type="RANDOMDIGITS" size="-1"/>
+    </table>
+
+
+</configuration>
