@@ -37,7 +37,7 @@ public class DDT implements Serializable {
     @Column(name = "data_ddt", length = 10)
     private String dataDDT;
 
-    @OneToMany(mappedBy = "dDT")
+    @OneToMany(mappedBy = "dDT" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<NumeroLinea> numeroLineas = new HashSet<>();
 

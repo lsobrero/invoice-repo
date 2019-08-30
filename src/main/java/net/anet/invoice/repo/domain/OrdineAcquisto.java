@@ -53,7 +53,7 @@ public class OrdineAcquisto implements Serializable {
     @Column(name = "codice_cig", length = 15)
     private String codiceCIG;
 
-    @OneToMany(mappedBy = "ordineAcquisto")
+    @OneToMany(mappedBy = "ordineAcquisto" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<NumeroLinea> numeroLineas = new HashSet<>();
 

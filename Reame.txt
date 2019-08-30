@@ -11,10 +11,10 @@ docker-compose -f src/main/docker/mysql.yml up -d --remove-orphans
 
 test data
 
-http://localhost:8081/api/fa-headers/
-http://localhost:8081/api/fa-bodies/
+http://localhost:8081/services/invoice/api/fa-headers/
+http://localhost:8081/services/invoice/api/fa-bodies/
 
-http://localhost:8081/h2-console/
+http://localhost:8081/services/invoice/h2-console
 
 delete from ALLEGATO;
 delete from ALTRI_DATI_GESTIONALI;

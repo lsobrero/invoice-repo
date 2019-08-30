@@ -33,7 +33,7 @@ public class DatiPagamento implements Serializable {
     @Column(name = "condizioni_pagamento", length = 4)
     private String condizioniPagamento;
 
-    @OneToMany(mappedBy = "datiPagamento")
+    @OneToMany(mappedBy = "datiPagamento" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<DettaglioPagamento> dettaglioPagamentos = new HashSet<>();
 

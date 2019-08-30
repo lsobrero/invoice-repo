@@ -50,7 +50,7 @@ public class DataLoader implements ApplicationRunner {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            if(numFiles > 1000)
+            if(numFiles > 10000)
                 break;
         }
     }

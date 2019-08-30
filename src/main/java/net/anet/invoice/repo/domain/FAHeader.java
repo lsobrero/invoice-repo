@@ -364,7 +364,7 @@ public class FAHeader implements Serializable {
     @Column(name = "soggetto_emittente", length = 2)
     private String soggettoEmittente;
 
-    @OneToMany(mappedBy = "fAHeader")
+    @OneToMany(mappedBy = "fAHeader" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<FABody> fABodies = new HashSet<>();
 

@@ -206,59 +206,59 @@ public class FABody implements Serializable {
     @Column(name = "d_v_totale_percorso", length = 15)
     private String dVTotalePercorso;
 
-    @OneToMany(mappedBy = "fABody")
+    @OneToMany(mappedBy = "fABody" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Causale> causales = new HashSet<>();
 
-    @OneToMany(mappedBy = "fABody")
+    @OneToMany(mappedBy = "fABody" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<CassaPrevidenziale> cassaPrevidenziales = new HashSet<>();
 
-    @OneToMany(mappedBy = "fABody")
+    @OneToMany(mappedBy = "fABody" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<ScontoMaggiorazione> scontoMaggioraziones = new HashSet<>();
 
-    @OneToMany(mappedBy = "fABody")
+    @OneToMany(mappedBy = "fABody" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<OrdineAcquisto> ordineAcquistos = new HashSet<>();
 
-    @OneToMany(mappedBy = "fABody")
+    @OneToMany(mappedBy = "fABody" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Contratto> contrattos = new HashSet<>();
 
-    @OneToMany(mappedBy = "fABody")
+    @OneToMany(mappedBy = "fABody" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Convenzione> convenziones = new HashSet<>();
 
-    @OneToMany(mappedBy = "fABody")
+    @OneToMany(mappedBy = "fABody" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Ricezione> riceziones = new HashSet<>();
 
-    @OneToMany(mappedBy = "fABody")
+    @OneToMany(mappedBy = "fABody" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<FatturaCollegata> fatturaCollegatas = new HashSet<>();
 
-    @OneToMany(mappedBy = "fABody")
+    @OneToMany(mappedBy = "fABody" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<SAL> sALS = new HashSet<>();
 
-    @OneToMany(mappedBy = "fABody")
+    @OneToMany(mappedBy = "fABody" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<DDT> dDTS = new HashSet<>();
 
-    @OneToMany(mappedBy = "fABody")
+    @OneToMany(mappedBy = "fABody" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<DettaglioLinea> dettaglioLineas = new HashSet<>();
 
-    @OneToMany(mappedBy = "fABody")
+    @OneToMany(mappedBy = "fABody" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<DatiRiepilogo> datiRiepilogos = new HashSet<>();
 
-    @OneToMany(mappedBy = "fABody")
+    @OneToMany(mappedBy = "fABody" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<DatiPagamento> datiPagamentos = new HashSet<>();
 
-    @OneToMany(mappedBy = "fABody")
+    @OneToMany(mappedBy = "fABody" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Allegato> allegatoes = new HashSet<>();
 

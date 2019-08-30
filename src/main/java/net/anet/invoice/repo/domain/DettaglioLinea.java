@@ -81,15 +81,15 @@ public class DettaglioLinea implements Serializable {
     @Column(name = "s_m_riferimento_amministrazione", length = 20)
     private String sMRiferimentoAmministrazione;
 
-    @OneToMany(mappedBy = "dettaglioLinea")
+    @OneToMany(mappedBy = "dettaglioLinea" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<CodiceArticolo> codiceArticolos = new HashSet<>();
 
-    @OneToMany(mappedBy = "dettaglioLinea")
+    @OneToMany(mappedBy = "dettaglioLinea" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<ScontoMaggiorazione> scontoMaggioraziones = new HashSet<>();
 
-    @OneToMany(mappedBy = "dettaglioLinea")
+    @OneToMany(mappedBy = "dettaglioLinea" , cascade = {CascadeType.ALL} , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<AltriDatiGestionali> altriDatiGestionalis = new HashSet<>();
 
