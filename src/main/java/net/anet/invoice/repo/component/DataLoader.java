@@ -31,7 +31,7 @@ public class DataLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        int numFiles=0;
+        int numFiles=1;
         log.debug("Starting DataLoader::process");
 //        if(true)
 //            return;
@@ -50,8 +50,8 @@ public class DataLoader implements ApplicationRunner {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            if(numFiles > 10000)
-                break;
+//            if(numFiles > 10000)
+//                break;
         }
     }
 }
