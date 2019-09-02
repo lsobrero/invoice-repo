@@ -329,7 +329,7 @@ public class FAHeader implements Serializable {
     private String cCRFCognome;
 
     @Size(max = 2)
-    @Column(name = "t_ida_id_paese", length = 2)
+    @Column(name = "t_ida_id_paese", length = 10)
     private String tIDAIdPaese;
 
     @Size(max = 28)

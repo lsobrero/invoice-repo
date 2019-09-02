@@ -147,7 +147,7 @@ public class FABody implements Serializable {
     private String pesoNetto;
 
     @Size(max = 19)
-    @Column(name = "data_ora_ritiro", length = 19)
+    @Column(name = "data_ora_ritiro", length = 30)
     private String dataOraRitiro;
 
     @Size(max = 10)
@@ -183,7 +183,7 @@ public class FABody implements Serializable {
     private String nazione;
 
     @Size(max = 19)
-    @Column(name = "data_ora_consegna", length = 19)
+    @Column(name = "data_ora_consegna", length = 30)
     private String dataOraConsegna;
 
     @Size(max = 20)
