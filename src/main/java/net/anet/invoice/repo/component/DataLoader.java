@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -29,6 +30,12 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     private FABodyRepository faBodyRepository;
 
+    private final Environment env;
+
+    public DataLoader(Environment env) {
+        this.env = env;
+    }
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
         int numFiles=1;
@@ -36,7 +43,9 @@ public class DataLoader implements ApplicationRunner {
 //        if(true)
 //            return;
 //        Collection<File> listOfFiles = listFiles(new File("/home/luis/lavoro/fatturaPoli/invoice/src/test/resources/files"), new String[]{"xml"}, true);
-        Collection<File> listOfFiles = listFiles(new File("/home/luis/lavoro/fatturaPoli/invoices/files/"), new String[]{"xml"}, true);
+//        Collection<File> listOfFiles = listFiles(new File("/home/luis/lavoro/fatturaPoli/invoices/files/"), new String[]{"xml","XML"}, true);
+        Collection<File> listOfFiles = listFiles(new File(env.getProperty("invoice.directory")), new String[]{"xml","XML"}, true);
+
         for(File file: listOfFiles) {
             try {
 //                FatturaElettronicaType ft = (FatturaElettronicaType) XMLParser.parseXML("/home/luis/lavoro/fatturaPoli/invoice/src/test/resources/files/fatt_0001.xml");
@@ -50,8 +59,8 @@ public class DataLoader implements ApplicationRunner {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-//            if(numFiles > 10000)
-//                break;
+            if(numFiles > 10000)
+                break;
         }
     }
 }

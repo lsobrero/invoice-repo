@@ -171,3 +171,5 @@ jhipster:
 # ===================================================================
 
 # application:
+invoice:
+    directory: '/home/luis/lavoro/fatturaPoli/invoices/files-fake/'
