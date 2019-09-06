@@ -50,7 +50,7 @@ public class DataLoader implements ApplicationRunner {
             try {
 //                FatturaElettronicaType ft = (FatturaElettronicaType) XMLParser.parseXML("/home/luis/lavoro/fatturaPoli/invoice/src/test/resources/files/fatt_0001.xml");
                 if(file.isFile()){
-                    log.debug("DataLoader::process file=",file.toString());
+                    log.debug("DataLoader::process file="+file.toString());
                     FatturaElettronicaType ft = (FatturaElettronicaType) XMLParser.parseXML(file.toString());
                     FAHeader fep = FattelMapper.mapToHeader(ft);
                     faHeaderRepository.save(fep);
@@ -59,8 +59,8 @@ public class DataLoader implements ApplicationRunner {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-//            if(numFiles > 10000)
-//                break;
+            if(numFiles > 10000)
+                break;
         }
     }
 }
